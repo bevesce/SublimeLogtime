@@ -1,0 +1,3 @@
+[
+  { "keys": ["shift+super+f"], "command": "logtime_filter", "context": [{ "key": "selector", "operator": "equal", "operand": "text.logtime" }] },
+]

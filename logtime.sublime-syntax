@@ -1,0 +1,13 @@
+%YAML 1.2
+---
+name: logtime
+file_extensions: [logtime]
+scope: text.logtime
+
+contexts:
+ main:
+   - match: '^\n$'
+   - match: ^#.*
+     scope: comment
+   - match: ^\d\d\d\d-\d\d-\d\d \d\d:\d\d
+     scope: storage
