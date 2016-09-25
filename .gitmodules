@@ -1,0 +1,3 @@
+[submodule "logtime"]
+	path = logtime
+	url = https://bevesce@github.com/bevesce/logtime.git

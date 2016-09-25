@@ -32,7 +32,8 @@ class LogtimeFilterCommand(sublime_plugin.TextCommand):
         self.unfold_all()
         try:
             query = logtime.parse_query(query)
-        except finanse.ParseError:
+        except Exception as e:
+            print(e)
             return
         content = self.view.substr(sublime.Region(0, self.view.size()))
         lines_to_fold = self.find_lines_to_fold(content, query)
