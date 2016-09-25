@@ -5,8 +5,6 @@ from datetime import datetime
 from .logtime import logtime
 
 
-
-
 class LogtimeFilterCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.query_from_input()
