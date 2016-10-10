@@ -65,10 +65,10 @@ class LogtimeFilterCommand(sublime_plugin.TextCommand):
                     start_date = date
             else:
                 tags_line = i
-                tags = line.split(' - ')
+                tags = (t.strip() for t in line.split('/'))
             if start_date and end_date and tags is not None:
                 logitem = logtime.LogItem(start_date, end_date, tags)
-                if query(logitem):
+                if self.matches(query, logitem):
                     yield start_date_line
                     yield tags_line
                     yield end_date_line
@@ -78,9 +78,13 @@ class LogtimeFilterCommand(sublime_plugin.TextCommand):
                 end_date = None
         if start_date and tags:
             logitem = logtime.LogItem(start_date, datetime.now(), tags)
-            if query(logitem):
+            if self.matches(query, logitem):
                 yield start_date_line
                 yield tags_line
+
+    def matches(self, query, logitem):
+        return query.matches(logitem)
+
 
     def fold_lines(self, indices):
         regions_to_fold = self.find_regions_to_fold(indices)
