@@ -26,11 +26,9 @@ Highlighting should work with every color scheme:
 
 You can filter (by folding) log items with *logtime* queries:
 
-![filter](screenshots/filter.png)
+![filter](screenshots/filter.gif)
 
-Pressing enter will show quick panel with the total amount of time spent on resulting log items:
-
-![sum](screenshots/sum.png)
+Pressing enter will show quick panel with the total amount of time spent on resulting log items.
 
 
 ## License
